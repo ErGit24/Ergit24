@@ -40,7 +40,7 @@
 
 <div align="left">
   <a href="https://codeblueprint.itch.io/" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=View my games on Itch.io&logo=itch-dot-io&label=&color=fa5c5c&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="Itch.io Badge" />
+    <img src="https://img.shields.io/static/v1?message=itch.io&logo=itch&label=&color=000000&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="itch.io black badge" />
   </a>
 </div>
 
