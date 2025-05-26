@@ -1,8 +1,8 @@
-name: Generate pacman Animation
+name: Generate Pacman Animation
 
 on:
   schedule:
-    - cron: '0 */5 * * *'  # Every 5 hours at minute 0
+    - cron: '0 */12 * * *'  # Every 12 hours at minute 0
   workflow_dispatch:
   push:
     branches:
@@ -22,26 +22,23 @@ jobs:
       - name: Generate pacman-contribution-graph.svg
         uses: abozanona/pacman-contribution-graph@main
         with:
-          github_user_name: ergit24
+          github_user_name: Ergit24
 
-      - name: Debug action output
+      - name: Debug file existence
         run: |
-          echo "Listing current directory contents:"
-          ls -la
-
-      - name: Validate file existence
-        run: |
-          if [ -f pacman-contribution-graph.svg ]; then
-            echo "File successfully generated."
+          ls -la dist
+          if [ -f dist/pacman-contribution-graph.svg ]; then
+            echo "Light theme file exists"
           else
-            echo "Error: pacman-contribution-graph.svg not found."
+            echo "Error: dist/pacman-contribution-graph.svg not found"
             exit 1
           fi
-
-      - name: Setup output folder
-        run: |
-          mkdir -p dist
-          mv pacman-contribution-graph.svg dist/
+          if [ -f dist/pacman-contribution-graph-dark.svg ]; then
+            echo "Dark theme file exists"
+          else
+            echo "Error: dist/pacman-contribution-graph-dark.svg not found"
+            exit 1
+          fi
 
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
