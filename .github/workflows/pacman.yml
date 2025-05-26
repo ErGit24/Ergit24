@@ -1,28 +1,62 @@
-name: generate pacman game
+name: Generate Pacman Animation
 
 on:
-  schedule: # Run automatically every 24 hours
-    - cron: "0 */24 * * *"
-  workflow_dispatch: # Allows manual triggering
-  push: # Runs on every push to the main branch
+  schedule:
+    - cron: '0 */12 * * *'  # Every 12 hours at minute 0
+  workflow_dispatch:
+  push:
     branches:
       - main
 
 jobs:
   generate:
+    runs-on: ubuntu-latest
     permissions:
       contents: write
-    runs-on: ubuntu-latest
     timeout-minutes: 5
 
     steps:
-      - name: generate pacman-contribution-graph.svg
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate pacman-contribution-graph.svg
         uses: abozanona/pacman-contribution-graph@main
         with:
-          github_user_name: ${{ github.repository_owner }}
+          github_user_name: Ergit24  # Updated to match your username from the README
 
-      # Push the generated SVG to the output branch
-      - name: push pacman-contribution-graph.svg to the output branch
+      - name: Debug file existence
+        run: |
+          ls -la
+          if [ -f pacman-contribution-graph.svg ]; then
+            echo "Light theme file exists"
+          else
+            echo "Error: pacman-contribution-graph.svg not found"
+            exit 1
+          fi
+          if [ -f pacman-contribution-graph-dark.svg ]; then
+            echo "Dark theme file exists"
+          else
+            echo "Error: pacman-contribution-graph-dark.svg not found"
+            exit 1
+          fi
+
+      - name: Setup output folder
+        run: |
+          mkdir -p dist
+          if [ -f pacman-contribution-graph.svg ]; then
+            mv pacman-contribution-graph.svg dist/
+          else
+            echo "Error: pacman-contribution-graph.svg not found"
+            exit 1
+          fi
+          if [ -f pacman-contribution-graph-dark.svg ]; then
+            mv pacman-contribution-graph-dark.svg dist/
+          else
+            echo "Error: pacman-contribution-graph-dark.svg not found"
+            exit 1
+          fi
+
+      - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
