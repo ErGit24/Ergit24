@@ -2,6 +2,12 @@
 
 ###
 
+<div align="center">
+  <img src="https://profile-counter.glitch.me/Ergit24/count.svg?"  />
+</div>
+
+###
+
 <h2 align="left">Tech Stack:</h2>
 
 ###
@@ -39,17 +45,15 @@
 ###
 
 <div align="left">
-  <a href="https://codeblueprint.itch.io/" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=itch.io&logo=itch&label=&color=000000&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="itch.io black badge" />
-  </a>
+  <img src="https://img.shields.io/static/v1?message=itch.io&logo=itch&label=&color=000000&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="itch logo"  />
 </div>
 
 ###
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Ergit24&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=github_dark&locale=en&hide_border=false" height="140" alt="stats graph"  />
-  <img src="https://streak-stats.demolab.com?user=Ergit24&locale=en&mode=daily&theme=dracula&hide_border=false&border_radius=5" height="140" alt="streak graph"  />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Ergit24&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=6&theme=github_dark&hide_border=false" height="140" alt="languages graph"  />
+  <img src="https://github-readme-stats.vercel.app/api?username=Ergit24&hide_title=true&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dark&locale=en&hide_border=true" height="140" alt="stats graph"  />
+  <img src="https://streak-stats.demolab.com?user=Ergit24&locale=en&mode=daily&theme=dark&hide_border=true&border_radius=5" height="140" alt="streak graph"  />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Ergit24&locale=en&hide_title=true&layout=compact&card_width=320&langs_count=6&theme=dark&hide_border=true" height="140" alt="languages graph"  />
 </div>
 
 ###
@@ -59,11 +63,5 @@
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Ergit24/Ergit24/output/pacman-contribution-graph.svg">
   <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/Ergit24/Ergit24/output/pacman-contribution-graph.svg">
 </picture>
-
-###
-
-<div align="center">
-  <img src="https://profile-counter.glitch.me/Ergit24/count.svg?"  />
-</div>
 
 ###
